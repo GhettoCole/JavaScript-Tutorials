@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calling a funciton</title>
+</head>
+<body>
+<h1>Calling a function</h1>
+<p id="changed">
+	I love programming with JavaScript 
+</p>
+<div id="div">
+	And I also love CSS, HTML and PHP
+</div>
+
+<p>
+	<button type="button" onclick="myFunction()">
+		change
+	</button>
+</p>
+
+<script type="text/javascript">
+	function myFunction(){
+		document.getElementById("changed").innerHTML = "Some other programming languages I like are Java, Python, C++ and C#"
+		document.getElementById("div").innerHTML = "Coding is like talking with my bestfriend except this time he/she is how I want her/him"
+	}
+</script>
+
+</body>
+</html>

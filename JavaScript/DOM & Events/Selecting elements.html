@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selecting elements</title>
+	<script type="text/javascript" src="Selecting elements.js"></script>
+</head>
+<body>
+<p>Programming</p>
+<p>Coding</p>
+<p>Writing software</p>
+
+<script type="text/javascript">
+	var arr = document.getElementsByTagName("p");
+	for (var x = 0; x < arr.length; x++){
+		arr[x].innerHTML = "I Love Programming with JavaScript, PHP, CSS, Python and HTML";
+		// This will replace the <p> tages with the above arr[x].innerHTML statement
+	}
+</script>
+
+<div id="demo">
+	<p>I hate programming</p>
+	<p>Programming is a waste of time</p>
+	<p>Being a programmer is a nightmare come true</p>
+</div>
+
+<script type="text/javascript">
+	var a = document.getElementById("demo");
+var arr = a.childNodes;
+for (var x = 0; x < arr.length; x++){
+	arr[x].innerHTML = "I really enjoy Programming!\nPython, HTML, JavaScript, CSS, PHP and C++ are phenomenal";
+}
+</script>
+<!--
+the getElementsByTagName method returns all elements of the specified tag name as an array
+ -->
+</body>
+</html>

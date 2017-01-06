@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Handling</title>
+</head>
+<body>
+
+<!-- 
+Handling events
+When an event occurs on a target element , a handler function is executed
+
+Common HTML events include;
+
+Events    					Description
+
+onclick						- occurs when a user clicks on an element
+onload						- occurs when an object has loades
+onunload 					- occurs onces a page has unloaded  for <body>
+onchange					- occurs when the content of a form element, the selection or the check state has changed
+onmouseover 				- occurs when the pointer is moved onto an element or onto one of its child
+onmouseout 					- occurs when the user moves the pointer out of an element or onto one of its child
+onblur 						- occurs when an element looses focus 
+onfocus 					- occurs when an element gets focus
+
+-->
+
+<!-- A pop up alert when the user clicks a specified button -->
+<button onclick="show()" style="background-color: purple; color: black; padding: 20px 20px solid blue;">GhettoCole</button>
+<script type="text/javascript">
+	function show(){
+		alert("Welcome To My Website \"Tech Wizard\" ");
+	}
+</script>
+
+<button id="time" onclick="show()" style="background-color: purple; color: default; padding: 20px 20px solid blue">
+	Date
+</button>
+<script type="text/javascript">
+	var x = document.getElementById("time");
+	x.onclick = function(){
+		document.body.innerHTML = Date();
+	}
+</script>
+
+<!--
+Events
+
+The onload and onunload event s are triggered when the user enters or leaves the page
+
+<body onload="doSomething()">
+
+Similarly the window.onload event can be used to run code after the Whole page has been loaded
+
+
+The on change event is mostly used on textboxes
+This event handler gets called when the text inside the textbox is chaged/changes and focus is lost from the element
+
+-->
+
+<input type="text" name="text" id="text" style="background-color: black; color: white;" onchange="change()">
+<script type="text/javascript">
+	function change(){
+		var b = document.getElementById("text");
+		b.value = b.value.toUpperCase();
+	}
+</script>
+
+<!--
+Event Listeners
+
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers
+Can add many event handlers to one element
+
+element.addEventListener(evenrt, function, useCapture);
+
+The first parameter is the event's type(like click or mousedown)
+The second parameter is the funtion we want to call when an event occures
+The third parameter is a boolean value specifying whether to use event bubbling or event capturing
+The third parameter is optional
+
+NOTE: Dont user the "on" prefix for this event, use "click" instead of onclick
+
+element.addEventListener("click",myFunctiom);
+element.addEventListener("mouseover",myFunction);
+
+function myFunction(){
+	alert("Hello");
+} //This adds two listeners to the same element
+
+-->
+
+
+<!-- An event handler that removes itself after being executed -->
+<button id="demo">
+	Start
+</button>
+<script type="text/javascript">
+	var btn = document.getElementById("demo");
+	btn.addEventListener("click", myFunction);
+
+	function myFunction(){
+		alert(Math.random());
+		btn.removeEventListner("click", myFunction);
+	}
+</script>
+
+</body>
+</html>

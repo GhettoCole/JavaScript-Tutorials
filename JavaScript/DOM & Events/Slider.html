@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image slider</title>
+</head>
+<body>
+
+<div style="background-color: white; color: default; padding: 20px 20px purple;">
+	<button onclick="prev()">Previous</button>
+	<img src="3.jpg" id="slider" alt="" width="480px" height="480px"/>
+<button onclick="next()">Next</button>
+</div>
+
+<script type="text/javascript">
+	
+	var images = [ 
+	"3.jpg",
+	"5.jpg",
+	"21.jpg"
+];
+
+var num = 0;
+
+function next(){
+	var slider = document.getElementById("slider");
+	num++;
+	if (num >= images.length){
+		num = 0;
+	}
+	slider.src = images[num];
+}
+
+function prev(){
+	var slider = document.getElementById("slider");
+	num--;
+	if (num < 0){
+		num = images.length - 1;
+	}
+	slider.src = images[num];
+}
+
+
+</script>
+
+</body>
+</html>
+
+ 
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event propagation</title>
+</head>
+<body>
+<!--
+Event propagation 
+- bubbling and capturing
+
+Event propagation allows for the definition of the element order when an event occurs
+
+- Bubbling - the innermost element's event is handled first and then the outer element's event is handled
+
+- Capturing - the outermost element's event is handled first and then the inner element's event is handled
+
+Capturing goes down the DOM
+Bubbling goes up the DOM
+
+The addEventListener() method allows you to specify the propagation type with the useCapture parameter
+
+The default value is false, which means the bubbling propagation is used
+When the value is true, the capturing propagation is used
+
+
+-->
+
+<script type="text/javascript">
+	// Capturing propagation
+	ele1.addEventListener("click", myFunc, true);
+
+	// Bubbling propagation
+	ele2.addEventListener("click", myFunc, false);
+
+	// Useful when you have the same event handled for multiple elements in the DOM hierarchy
+
+</script>
+</body>
+</html>

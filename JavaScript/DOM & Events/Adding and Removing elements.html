@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Adding and Removing Elements</title>
+</head>
+<body>
+<!--
+Used methods for creating new nodes
+
+element.cloneNode() - clones an element and returns the resulting node
+element.createElement(element) - creates a new element node
+element.createTextNode(text) - creates a new text node
+
+Example
+
+var node = document.createTextNode("Some new text");
+// Will create a new text node but will not appear in the document until it is appended  to an existing element
+// with one of the following methods
+
+element.appendChild(newNode) - adds a new child node to an element as the last child node
+element.insertBefore(node1, node2) - inserts node1 as a child before node2
+
+-->
+<div id="random" style="background-color: purple; color: white; width: 480px; height: 400px">
+	<h1>Programming Is Fun</h1>
+	<p>I started learning programming 3 months ago, and now I can't stop But I'd be lying if I said I want to stop</p>
+</div>
+
+<script type="text/javascript"> // This creates a new paragraph and adds it to the existing div element of the pag
+	// creating a new paragraph
+	var p = document.createElement("p");
+	var node = document.createTextNode("In the morning, throughout the day and even at night after 22:55, I stay up just to code, Now I am proud to say I am a pretty good programmer!");
+	p.appendChild(node);
+	// addin the paragraph to the div
+	var div = document.getElementById("random")
+	div.appendChild(p);
+</script>
+<!--
+
+Removing elements
+To remove an HTML element, you must select the parent of the element and use the removeChild(node) method
+
+-->
+
+<div id="remove" style="background-color: black; color: white">
+	<!-- Giving paragraphs id's for creating a script and deleting them -->
+	<p id="p1">Fuck it, I am gonna be a programmer!</p>
+	<p id="p2">And there ain't nobody that can stop me!</p>
+	<p id="p3">I'll never be a programmer!</p>
+	<p id="p4">Programming is fun and absolutely amazing</p>
+	<p id="p5">Programming is tiresome and boring</p>
+</div>
+<script type="text/javascript">
+	var parent = document.getElementById("remove");
+	var child = document.getElementById("p3");
+	parent.removeChild(child); // Removing the paragraph with the p3 id
+
+	var child2 = document.getElementById("p5");
+	child2.parentNode.removeChild(child2);
+
+	/*
+This can be done alternatively with the parentNode property to get the element of the parent we want
+
+var child = document.getElementById("p3");
+child.parentNode.removeChild(child);
+	*/
+</script>
+
+<!--
+To replace an HTML element, the element.replaceChild(newNode, oldNode) method is used
+-->
+
+<div id="replace" style="background-color: white; color: black;">
+	<p id="replaceMe">I want to be replaced</p>
+	<p id="replaceMeToo">I Love to write code with JavaScript, HTML, CSS, Python, Java, C++, C, C# and PHP</p>
+</div>
+
+<script type="text/javascript">
+	var p = document.createElement("p");
+	var node = document.createTextNode("JavaScript is fun and easy to learn yet it is hard to master");
+	p.appendChild(node);
+
+	var parent = document.getElementById("replace");
+	var child = document.getElementById("replaceMe");
+	parent.replaceChild(p,  child);
+</script>
+
+</body>
+</html>

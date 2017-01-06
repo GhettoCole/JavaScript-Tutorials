@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changing elements and Attributes</title>
+	<script type="text/javascript" src="Changing Attributes and element.js"></script>
+
+</head>
+<body>
+<img id="Image" src="5.jpg" alt="" style="width: 700px; height: 480px;" />
+<script type="text/javascript">
+	var el =  document.getElementById("Image");
+el.src = "21.jpg";
+</script>
+
+<!-- Changing href of a link -->
+<a href="http://www.google.com" target="_blank">Google</a>
+<script type="text/javascript">
+	var el = document.getElementsByTagName("a");
+	el[0].href = "http://www.Gmail.com";
+	el[0].innerHTML = 'Facebook';
+</script>
+<!-- Practically all attributes of an element can be changed using JavaScript -->
+
+<!--
+Style changing
+The style of HTML elements can be changed using JavaScript
+All style attributes can be access using the style object of the element
+
+-->
+
+<div id="test" style="width: 200px">
+	HTML said I am black but javascript changed me to green
+</div>
+<script type="text/javascript">
+	var ghetto = document.getElementById("test");
+	ghetto.style.color = "green";
+	ghetto.style.width = "200px";
+</script>
+
+<!--
+All CSS properties can be set and modified using JavaScript
+NOTE: You cannot use (-) dashes in the property names, these are replaced with camelCase versions, where compound words begin with a capital letter
+
+Example:
+background-color property is referrenced as backgroundColor
+
+-->
+
+</body>
+</html>
